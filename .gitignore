@@ -1,0 +1,37 @@
+## ban all
+*
+!*/
+
+!.gitignore
+!README.md
+## except white list to
+# include (w/ ! prefix):
+
+
+!/src/**/*.*
+!/jBsrc/**/*.*
+!/libs/**/*.*
+!/release/*.*
+# has /admin
+!/jbake/**/*.*
+
+
+!**/*.java
+
+
+!**/*.less
+!**/*.scss
+!**/*.sass
+!**/*.pug
+!**/*.ts
+!**/*.md
+
+
+!build.gradle
+!conf.props
+!Wedgefile
+
+## over ride
+**/.DS_Store
+**/Thumbs.db
+/node_modules
