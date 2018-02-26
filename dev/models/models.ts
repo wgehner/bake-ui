@@ -39,7 +39,7 @@ store.addActionCallbacks({
 // fetch ////
 
 
-var ROOT = 'http://localhost:8081/'
+var ROOT = 'http://207.246.121.56:8080/'
 
 function list( ) { // return value
 	return fetch(ROOT + 'list', {
