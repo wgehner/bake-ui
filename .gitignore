@@ -9,6 +9,8 @@
 ## except white list to
 # include (w/ ! prefix):
 
+!/dev/assets
+
 !**/*.less
 !**/*.scss
 !**/*.sass
