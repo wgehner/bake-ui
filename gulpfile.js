@@ -40,7 +40,7 @@ gulp.task('html', function() {
 	})
 
 gulp.task('comp', function() {  
-	return gulp.src('./dev/comps/*.pug')
+	return gulp.src('./dev/admin/comps/*.pug')
 		.pipe( pug(
 			{pretty: true }
 		)) // pipe to pug plugin
@@ -49,17 +49,18 @@ gulp.task('comp', function() {
 			{ } 
 		))
 		.pipe( rename({ extname: '.js'}))
-		//.pipe(debug())
-		.pipe(gulp.dest('./dev/comps/'))
+		.pipe(debug())
+		.pipe(gulp.dest('./dev/admin/comps/'))
 	})
 
 gulp.task('tag', function() {  
-	return gulp.src('./dev/comps/*.pug')
+	return gulp.src('./dev/admin/comps/*.pug')
 		.pipe( pug(
 			{pretty: true }
 		)) // pipe to pug plugin
+		//.pipe(debug())
 		.pipe( rename({ extname: '.tag'}))
-		.pipe(gulp.dest('./dev/comps/'))	
+		.pipe(gulp.dest('./dev/admin/comps/'))	
 	})
 
 gulp.task('js', function () {

@@ -11,6 +11,7 @@
 
 !/dev/assets/**
 !/dev/comps/**
+!/dev/admin/comps/**
 
 !**/*.less
 !**/*.scss
@@ -20,7 +21,7 @@
 !**/*.md
 
 
-#other
+#other includes:
 
 !Wedgefile
 !package.json
@@ -28,7 +29,7 @@
 
 
 ## over ride
-
+/node_modules/**
 **/.DS_Store
 **/Thumbs.db
-/node_modules
+**/*.html
