@@ -32,7 +32,7 @@ gulp.task('css', function () {
 	})
 
 gulp.task('html', function() {  
-	return gulp.src('./dev/*.pug')
+	return gulp.src('./dev/**/*.pug')
 		.pipe( pug(
 			{ pretty: true }
 		)) // pipe to pug plugin
