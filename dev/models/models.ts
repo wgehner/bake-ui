@@ -52,7 +52,7 @@ function list( ) { // return value
 		if (!resp.ok) {
 			console.log('not ok')
 			console.log(resp)
-			throw Error(resp)
+			throw new Error(JSON.stringify(resp))
 		}
 		return resp.json();
 	}).then(function(obj) {
@@ -67,7 +67,7 @@ function list( ) { // return value
 
 function read( fn:string ) { // pass a query string ?item=blog/2013/some-post
 	var OO = new Object()
-	OO.item = fn
+	OO['item'] = fn
 	var qs = toQs(OO)
 	console.log(qs)
 
@@ -81,7 +81,7 @@ function read( fn:string ) { // pass a query string ?item=blog/2013/some-post
 		if (!resp.ok) {
 			console.log('not ok')
 			console.log(resp)
-			throw Error(resp)
+			new Error(JSON.stringify(resp))
 		}
 		return resp.json();
 	}).then(function(obj) {
