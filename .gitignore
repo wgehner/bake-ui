@@ -20,6 +20,9 @@
 !**/*.ts
 !**/*.md
 
+!**/*.ico
+
+
 
 #other includes:
 
