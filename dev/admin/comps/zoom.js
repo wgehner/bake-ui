@@ -25,12 +25,12 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     					mode:  'markdown'
     					, theme: 'neat'
     					, keyMap: 'sublime'
-    					, viewportMargin: 'Infinity'
+    					, v1iewportMargin: 'Infinity'
     				}
     		)
     	myCodeMirror.setValue('## oh hi')
     	setTimeout(function() {
-
+    				myCodeMirror.refresh()
     		}, 1)
     }
 });
