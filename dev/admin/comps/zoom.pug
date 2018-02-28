@@ -52,17 +52,21 @@ zoom
 					button.button.button-round.button-outline Save
 					button.button.button-round.button-outline Cancel
 
+	style.
+		CodeMirror {
+			height: auto !important;
+		}
 	script.
 		console.log('loaded zoom1')
 		loadjs(['/assets/gridforms/gridforms.css'
 					,'/assets/gridforms/gridforms.js'])
 
-		loadjs(['//1cdn.jsdelivr.net/npm/codemirror@5.33.0/lib/codemirror.css' 
-					,'//1cdn.jsdelivr.net/npm/codemirror@5.33.0/theme/neat.css'])
+		loadjs(['//cdn.jsdelivr.net/npm/codemirror@5.35.0/lib/codemirror.css' 
+					,'//cdn.jsdelivr.net/npm/codemirror@5.35.0/theme/neat.css'])
 
-		loadjs(['//cdn.jsdelivr.net/npm/codemirror@5.33.0/lib/codemirror.min.js'
-			, '//cdn.jsdelivr.net/npm/codemirror@5.33.0/mode/markdown/markdown.js'
-			, '//cdn.jsdelivr.net/npm/codemirror@5.33.0/keymap/sublime.js'
+		loadjs(['//cdn.jsdelivr.net/npm/codemirror@5.35.0/lib/codemirror.min.js'
+			, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/mode/markdown/markdown.js'
+			, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/keymap/sublime.js'
 			], 'zoom', {async: false})
 		loadjs.ready('zoom', {
 			success: function() { 
@@ -78,10 +82,11 @@ zoom
 							mode:  'markdown'
 							, theme: 'neat'
 							, keyMap: 'sublime'
+							, viewportMargin: 'Infinity'
 						}
 				)
 			myCodeMirror.setValue('## oh hi')
 			setTimeout(function() {
-						myCodeMirror.refresh()
+						//myCodeMirror.refresh()
 				}, 1)
 		}
