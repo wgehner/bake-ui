@@ -18,6 +18,7 @@ html
 
 	body
 		script(src='//cdn.jsdelivr.net/npm/riot@3.8.1/riot.js')
+		script(src='comps/zoom.js')
 
 		#app
 			//right
@@ -45,10 +46,12 @@ html
 						//route's main, .page-content if you want scroll
 						.page
 							p 
-								.block main
+								zoom
 
-
+			script(src='//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.slim.min.js')
 		script.
+			riot.mount('zoom')
+
 			loadjs(['//cdn.jsdelivr.net/npm/framework7@2.0.6/dist/js/framework7.js'
 				], 'deps')
 

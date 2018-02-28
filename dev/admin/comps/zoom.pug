@@ -1,50 +1,54 @@
 zoom
+	p 1
+	p 2
 	.block
-		br 
-		.grid-container
-			br
-			form.grid-form
-				fieldset
-					legend Edit
+		row
+			.col-5
+			.col-90
+				.grid-container
+					form.grid-form
+						fieldset
+							legend Edit
 
-					div(data-row-span='4')
-						div(data-field-span='2')
-							label Short Teaser  Title
-							input(type='text')
-						div(data-field-span='2')
-							label Tags CSV
-							input(type='text')
+							div(data-row-span='4')
+								div(data-field-span='2')
+									label Short Teaser  Title
+									input(type='text')
+								div(data-field-span='2')
+									label Tags CSV
+									input(type='text')
 
-					br
-					fieldset
-						legend Copy
-						div(data-row-span='4')
-							div(data-field-span='4')
-								label Markdown
-								textarea#cms1(rows='4',  autofocus='')
-						div(data-row-span='4')
-							div(data-field-span='4')
-								label Summary
-								input(type='text')
+							br
+							fieldset
+								legend Copy
+								div(data-row-span='4')
+									div(data-field-span='4')
+										label Markdown
+										textarea#cms1(rows='4',  autofocus='')
+								div(data-row-span='4')
+									div(data-field-span='4')
+										label Summary
+										input(type='text')
 
-					br
-					fieldset
-						Legend Extra
-						div(data-row-span='4')
-							div(data-field-span='2')
-								label Date
-								input(type='text')
-							div(data-field-span='2')
-								label Author
-								input(type='text')
-						//div(data-row-span='4')
-							div(data-field-span='4', data-field-error='Please enter a valid url')
-								label Paste URL
-								input(type='text')
-						//div(data-row-span='4')
-							div(data-field-span='4')
-								label Image URL (320x160)
-								input(type='text')
+							br
+							fieldset
+								Legend Extra
+								div(data-row-span='4')
+									div(data-field-span='2')
+										label Date
+										input(type='text')
+									div(data-field-span='2')
+										label Author
+										input(type='text')
+								//div(data-row-span='4')
+									div(data-field-span='4', data-field-error='Please enter a valid url')
+										label Paste URL
+										input(type='text')
+								//div(data-row-span='4')
+									div(data-field-span='4')
+										label Image URL (320x160)
+										input(type='text')
+			.col-5
 		br
 		div
 			.block
