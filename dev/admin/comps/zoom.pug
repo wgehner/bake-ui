@@ -2,10 +2,10 @@ zoom
 	p 1
 	p 2
 	.block
-		row
+		.row
 			.col-5
 			.col-90
-				.grid-container
+				div
 					form.grid-form
 						fieldset
 							legend Edit
@@ -49,12 +49,12 @@ zoom
 										label Image URL (320x160)
 										input(type='text')
 			.col-5
-		br
-		div
-			.block
-				p.segmented.segmented-round
-					button.button.button-round.button-outline Save
-					button.button.button-round.button-outline Cancel
+	hr
+	div
+		.block
+			p.segmented.segmented-round
+				button.button.button-round.button-outline Save
+				button.button.button-round.button-outline Cancel
 
 	script.
 		console.log('loaded zoom1')
