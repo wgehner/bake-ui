@@ -20,6 +20,8 @@
 #other
 
 !Wedgefile
+!package.json
+!gulpfile.js
 
 
 ## over ride
