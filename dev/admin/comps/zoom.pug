@@ -16,7 +16,7 @@ zoom
 
 					br
 					fieldset
-						legend Copy
+						legend Text
 						div(data-row-span='4')
 							div(data-field-span='4')
 								label Markdown
@@ -80,11 +80,13 @@ zoom
 			var myCodeMirror = CodeMirror.fromTextArea( document.querySelector('#cms1') ,
 						{
 							mode:  'markdown'
+							, lineNumbers: true
 							, theme: 'neat'
 							, keyMap: 'sublime'
 							, v1iewportMargin: 'Infinity'
 						}
 				)
+			myCodeMirror.setSize('100%',200)
 			myCodeMirror.setValue('## oh hi')
 			setTimeout(function() {
 						myCodeMirror.refresh()
