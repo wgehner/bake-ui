@@ -18,18 +18,10 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     loadjs.ready('zoom', {
     	success: function() {
     		initCodeMirror()
-    		modelGet()
+
     		},
     	error: function(depsNotFound) { Logger.log('could not load', depsNotFound ) }
     })
-
-    this.modelGet = function() {
-    	console.log('start')
-    	list().then(function(val) {
-    		console.log('back')
-
-    	})
-    }.bind(this)
 
     function initCodeMirror() {
     	console.log('loaded zoom2')
