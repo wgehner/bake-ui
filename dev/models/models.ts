@@ -3,7 +3,7 @@ console.log('fw')
 
 declare var fluxify: any // tsc
 
-var store = fluxify.createStore({ // the global models store!
+var store = fluxify.createStore({ // the global models store, a singleton
 	id: 'store'
 })
 function act(action:string, arg ){// sugar, passes data to action
@@ -23,8 +23,8 @@ function toQs(obj) {// to query string
 }
 
 var ERROR:string = '_ERROR'
-// specific /////////////////////////////////////////////////////////
-// map models to actions
+// end fw, specific /////////////////////////////////////////////////////////
+console.log('map models to actions')
 store.addActionCallbacks({
 	updateItem:function( updater , arg ){
 		updater.set({ data: arg })//set model
@@ -37,7 +37,6 @@ store.addActionCallbacks({
 })//()
 
 // fetch ////
-
 
 var ROOT = 'http://207.246.121.56:8080/'
 
@@ -92,4 +91,5 @@ function read( fn:string ) { // pass a query string ?item=blog/2013/some-post
 		}
 		return obj
 	})
+
 }

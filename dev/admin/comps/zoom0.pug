@@ -67,27 +67,13 @@ zoom
 		loadjs(['//cdn.jsdelivr.net/npm/codemirror@5.35.0/lib/codemirror.min.js'
 			, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/mode/markdown/markdown.js'
 			, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/keymap/sublime.js'
-			// MODEL:
-			, '//cdn.jsdelivr.net/npm/fluxify@0.2.3/build/fluxify.js'
-			, '/models/models.js'
-
 			], 'zoom', {async: false})
 		loadjs.ready('zoom', {
 			success: function() { 
-				initCodeMirror()
-				modelGet()
+				initCodeMirror() 
 				},
 			error: function(depsNotFound) { Logger.log('could not load', depsNotFound ) }
 		})
-
-		modelGet() {
-			console.log('start')
-			list().then(function(val) {
-				console.log('back')
-
-
-			})
-		}
 
 		function initCodeMirror() {
 			console.log('loaded zoom2')
@@ -102,11 +88,7 @@ zoom
 				)
 			myCodeMirror.setSize('100%',200)
 			myCodeMirror.setValue('## oh hi')
-
-
 			setTimeout(function() {
 						myCodeMirror.refresh()
 				}, 1)
-		}// initCM()
-
-		
+		}

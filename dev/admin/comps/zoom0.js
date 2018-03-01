@@ -10,26 +10,13 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     loadjs(['//cdn.jsdelivr.net/npm/codemirror@5.35.0/lib/codemirror.min.js'
     	, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/mode/markdown/markdown.js'
     	, '//cdn.jsdelivr.net/npm/codemirror@5.35.0/keymap/sublime.js'
-
-    	, '//cdn.jsdelivr.net/npm/fluxify@0.2.3/build/fluxify.js'
-    	, '/models/models.js'
-
     	], 'zoom', {async: false})
     loadjs.ready('zoom', {
     	success: function() {
     		initCodeMirror()
-    		modelGet()
     		},
     	error: function(depsNotFound) { Logger.log('could not load', depsNotFound ) }
     })
-
-    this.modelGet = function() {
-    	console.log('start')
-    	list().then(function(val) {
-    		console.log('back')
-
-    	})
-    }.bind(this)
 
     function initCodeMirror() {
     	console.log('loaded zoom2')
@@ -44,7 +31,6 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     		)
     	myCodeMirror.setSize('100%',200)
     	myCodeMirror.setValue('## oh hi')
-
     	setTimeout(function() {
     				myCodeMirror.refresh()
     		}, 1)

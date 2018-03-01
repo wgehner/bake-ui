@@ -1,9 +1,8 @@
 declare var QUnit: any
-console.log('loaded')
 QUnit.test( 'list', function( assert :any ) {
 	assert.expect( 1 )
 	var done = assert.async()
-	tstList(assert, done)
+	//tstList(assert, done)
  })
 function tstList(assert :any, done :any) {
 	console.log('start')
@@ -18,7 +17,7 @@ function tstList(assert :any, done :any) {
 QUnit.test( 'read', function( assert :any ) {
 	assert.expect( 1 )
 	var done = assert.async()
-	tstRead(assert, done)
+	//tstRead(assert, done)
  })
 function tstRead(assert :any, done :any) {
 	console.log('start')
@@ -34,11 +33,25 @@ function tstRead(assert :any, done :any) {
 
 
 // /////////////////////////////////////
-
-onModel('data', function(nv, state) {
-	console.log('here')
+console.log('F')
+onModel('dataLst', function(nv, state) {
+	console.log('MODEL')
 	console.log(state)
 })
+act('updateList', 'bla')
 
-//act('updateStory', 'bla')
+//  ////
 
+declare var fluxify: any // tsc
+
+var myStore = fluxify.createStore({
+	id: 'myStore',
+	actionCallbacks: {
+		myAction: function( updater ){
+			console.log( 'Hi!');
+		}
+	}
+});
+
+// These two action calls will trigger the store's callback
+fluxify.doAction( 'myAction' )
