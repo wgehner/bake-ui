@@ -46,14 +46,17 @@ list
 			error: function(depsNotFound) { Logger.log('could not load', depsNotFound ) }
 		})
 
-
 		function modelGet() {
 			console.log('start')
 			list().then(function(val) {
 				console.log('back')
 				console.log(val)
-
-
+				// when we have data, we redraw
+				let dw= $('#list1').DataTable()
+				dw.clear()
+				dw.rows.add(val)
+				dw.draw()
+				console.log( dw.data().length )
 			})
 		}
 

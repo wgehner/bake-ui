@@ -21,6 +21,11 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
     		console.log('back')
     		console.log(val)
 
+    		let dw= $('#list1').DataTable()
+    		dw.clear()
+    		dw.rows.add(val)
+    		dw.draw()
+    		console.log( dw.data().length )
     	})
     }
 
