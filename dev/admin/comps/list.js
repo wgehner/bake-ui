@@ -47,6 +47,14 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
     					{ title: 'Status' },
     			]
     		} )
+
+    		let dw= $('#list1').DataTable()
+
+    		$('#list1 tbody').on('click', 'tr', function () {
+    			var data = dw.row( this ).data()
+    			console.log( 'clicked on '+data[1]+'\'s row' )
+    		})
+
     	} )
 
     }

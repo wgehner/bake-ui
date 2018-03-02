@@ -60,7 +60,7 @@ list
 			})
 		}
 
-		function initList() {
+		function initList() {// and click
 			console.log('list2')
 			
 			$(document).ready(function() {
@@ -79,6 +79,14 @@ list
 							{ title: 'Status' },
 					]
 				} )//dt
+
+				let dw= $('#list1').DataTable()
+				//on click
+				$('#list1 tbody').on('click', 'tr', function () {
+					var data = dw.row( this ).data()
+					console.log( 'clicked on '+data[1]+'\'s row' )
+				})
+			
 			} )//ready
 
 		}//()
