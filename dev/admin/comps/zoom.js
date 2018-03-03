@@ -18,14 +18,31 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     loadjs.ready('zoom', {
     	success: function() {
     		initCodeMirror()
-
+    		modelGet()
     		},
     	error: function(depsNotFound) { Logger.log('could not load', depsNotFound ) }
     })
 
+    function modelGet() {
+    	console.log('start')
+    	var item = getQSByName('item')
+    	console.log(item)
+    	read(item).then(function(val) {
+    		console.log('back')
+    		console.log(val)
+
+    		myCodeMirror.setValue(val.orig)
+    		setTimeout(function() {
+    				myCodeMirror.refresh()
+    		}, 1)
+    	})
+
+    }
+
+    var myCodeMirror
     function initCodeMirror() {
     	console.log('loaded zoom2')
-    	var myCodeMirror = CodeMirror.fromTextArea( document.querySelector('#cms1') ,
+     	myCodeMirror = CodeMirror.fromTextArea( document.querySelector('#cms1') ,
     				{
     					mode:  'markdown'
     					, lineNumbers: true
@@ -35,10 +52,5 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     				}
     		)
     	myCodeMirror.setSize('100%',200)
-    	myCodeMirror.setValue('## oh hi')
-
-    	setTimeout(function() {
-    				myCodeMirror.refresh()
-    		}, 1)
     }
 });

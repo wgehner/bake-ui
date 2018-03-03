@@ -22,8 +22,19 @@ function toQs(obj) {// to query string
 		 }).join('&')
 }
 
+function getQSByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		 results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 var ERROR:string = '_ERROR'
 // end fw, specific /////////////////////////////////////////////////////////
+
 console.log('map models to actions')
 store.addActionCallbacks({
 	updateItem:function( updater , arg ){

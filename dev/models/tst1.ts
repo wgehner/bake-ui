@@ -2,7 +2,7 @@ declare var QUnit: any
 QUnit.test( 'list', function( assert :any ) {
 	assert.expect( 1 )
 	var done = assert.async()
-	//tstList(assert, done)
+	tstList(assert, done)
  })
 function tstList(assert :any, done :any) {
 	console.log('start')
@@ -17,7 +17,7 @@ function tstList(assert :any, done :any) {
 QUnit.test( 'read', function( assert :any ) {
 	assert.expect( 1 )
 	var done = assert.async()
-	//tstRead(assert, done)
+	tstRead(assert, done)
  })
 function tstRead(assert :any, done :any) {
 	console.log('start')
