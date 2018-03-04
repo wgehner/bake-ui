@@ -1,5 +1,5 @@
 
-riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <fieldset> <legend>Edit</legend> <div data-row-span="4"> <div data-field-span="2"> <label>Short Teaser Title</label> <input type="text"> </div> <div data-field-span="2"> <label>Tags CSV</label> <input type="text"> </div> </div><br> <fieldset> <legend>Text</legend> <div data-row-span="4"> <div data-field-span="4"> <label>Markdown</label> <textarea id="cms1" rows="4" autofocus=""></textarea> </div> </div> <div data-row-span="4"> <div data-field-span="4"> <label>Summary</label> <input type="text"> </div> </div> </fieldset><br> <fieldset> <legend>Extra</Legend> <div data-row-span="4"> <div data-field-span="2"> <label>Date</label> <input type="text"> </div> <div data-field-span="2"> <label>Author</label> <input type="text"> </div> </div> </fieldset> </fieldset> </form> </div> <p></p> <div> <div class="block"> <p class="segmented segmented-round"> <button class="button button-round button-outline">Save</button> <button class="button button-round button-outline">Cancel</button> </p> </div> </div> </div>', 'zoom CodeMirror,[data-is="zoom"] CodeMirror{ height: auto !important; }', '', function(opts) {
+riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <fieldset> <legend>Edit</legend> <div data-row-span="4"> <div data-field-span="2"> <label>Short Teaser Title</label> <input type="text"> </div> <div data-field-span="2"> <label>Tags CSV</label> <input type="text"> </div> </div><br> <fieldset> <legend>Text</legend> <div data-row-span="4"> <div data-field-span="4"> <label>Markdown</label> <textarea id="cms1" rows="4" autofocus=""></textarea> </div> </div> <div data-row-span="4"> <div data-field-span="4"> <label>Summary</label> <input type="text"> </div> </div> </fieldset><br> <fieldset> <legend>Extra</Legend> <div data-row-span="4"> <div data-field-span="2"> <label>Date</label> <input type="text"> </div> <div data-field-span="2"> <label>Author</label> <input type="text"> </div> </div> </fieldset> </fieldset> </form> </div> <p></p> <div> <div class="block"> <p class="segmented segmented-round"> <button class="button button-round button-outline">Save</button> <button class="button button-round button-outline">Cancel</button> </p> </div> </div> </div>', 'zoom CodeMirror,[data-is="zoom"] CodeMirror{ height: auto !important; }', 'style="visibility: hidden;"', function(opts) {
     console.log('loaded zoom1')
     loadjs(['/assets/gridforms/gridforms.css'
     			,'/assets/gridforms/gridforms.js'])
@@ -27,6 +27,7 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     	console.log('start')
     	var item = getQSByName('item')
     	console.log(item)
+
     	read(item).then(function(val) {
     		console.log('back')
     		console.log(val)
@@ -52,5 +53,7 @@ riot.tag2('zoom', '<p>.</p> <div class="block"> <div> <form class="grid-form"> <
     				}
     		)
     	myCodeMirror.setSize('100%',200)
+    	document.getElementsByTagName('zoom')[0].style.visibility = 'visible'
+
     }
 });

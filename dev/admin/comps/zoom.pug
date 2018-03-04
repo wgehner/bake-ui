@@ -1,4 +1,4 @@
-zoom
+zoom(style='visibility: hidden;')
 	p .
 	.block
 		div
@@ -56,6 +56,7 @@ zoom
 		CodeMirror {
 			height: auto !important;
 		}
+
 	script.
 		console.log('loaded zoom1')
 		loadjs(['/assets/gridforms/gridforms.css'
@@ -84,6 +85,7 @@ zoom
 			console.log('start')
 			var item = getQSByName('item')
 			console.log(item)
+			//show
 			read(item).then(function(val) {
 				console.log('back')
 				console.log(val)
@@ -109,4 +111,6 @@ zoom
 						}
 				)
 			myCodeMirror.setSize('100%',200)
+			document.getElementsByTagName('zoom')[0].style.visibility = 'visible'
+
 		}// initCM()
