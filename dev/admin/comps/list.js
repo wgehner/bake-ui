@@ -52,7 +52,11 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
 
     		$('#list1 tbody').on('click', 'tr', function () {
     			var data = dw.row( this ).data()
-    			console.log( 'clicked on '+data[1]+'\'s row' )
+    			var item = data[1]
+    			console.log( 'clicked on '+item+'\'s row' )
+
+    			var redirectWindow = window.open('edit.html?item='+item, '_blank')
+    			redirectWindow.location
     		})
 
     	} )
