@@ -41,7 +41,7 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
     			data: dataSet,
     			columns: [
     					{ title: 'Title' },
-    					{ title: 'File' },
+    					{ title: 'Item' },
     					{ title: 'Date' },
     					{ title: 'Type' },
     					{ title: 'Status' },
@@ -56,7 +56,10 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
     			console.log( 'clicked on '+item+'\'s row' )
 
     			var redirectWindow = window.open('edit.html?item='+item, '_blank')
-    			redirectWindow.location
+    			setTimeout(function() {
+    				redirectWindow.location
+    		}, 2000)
+
     		})
 
     	} )
@@ -64,8 +67,8 @@ riot.tag2('list', '<div class="block"><br> <p>.</p> <table class="display" id="l
     }
 
     var dataSet = [
-    	['First post', 'content/blog/2013/second-post', 123, 'post', 'ok'] ,
-    	['First post', 'content/blog/2013/second-post', 123, 'post', 'ok']
+    	['First post', 'blog/2013/second-post', 123, 'post', 'ok'] ,
+    	['First post', 'blog/2013/second-post', 123, 'post', 'ok']
 
     ]
 });
