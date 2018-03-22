@@ -4,6 +4,8 @@
 !*/
 
 !.gitignore
+!*.editorconfig
+
 !README.md
 
 ## except white list to
